@@ -165,6 +165,69 @@ html, body {
   font-size: 0.95rem;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-navbar-bg);
+  border: 1px solid var(--color-navbar-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.project-card:hover {
+  border-color: #c9c9c9;
+  box-shadow: 0 6px 20px var(--color-dropdown-shadow);
+  transform: translateY(-1px);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+.project-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.project-card-desc {
+  font-size: 0.9rem;
+  color: var(--color-badge-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.project-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navbar-text);
+}
+
+.project-card-cta::after {
+  content: " \2192";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navbar {
   position: relative;

@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import Blogs from "./Blogs";
 import Books from "./Books";
+import Projects from "./Projects";
 import Socials from "./Socials";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/books" element={<Books />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/socials" element={<Socials />} />
       </Routes>
     </BrowserRouter>

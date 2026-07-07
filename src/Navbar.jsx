@@ -7,6 +7,7 @@ const LINKS = {
   home: "/",
   blog: "/blogs",
   books: "/books",
+  projects: "/projects",
   social: "/socials",
 };
 
@@ -30,6 +31,11 @@ export default function Navbar() {
           <li>
             <Link to={LINKS.books} className="navbar-link">
               Books
+            </Link>
+          </li>
+          <li>
+            <Link to={LINKS.projects} className="navbar-link">
+              Projects
             </Link>
           </li>
           <li>
@@ -75,6 +81,14 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
           >
             Books
+          </Link>
+
+          <Link
+            to={LINKS.projects}
+            className="navbar-mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Projects
           </Link>
           <Link
             to={LINKS.social}
