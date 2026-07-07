@@ -1,5 +1,5 @@
 {
-  "name": "personal-portfolio",
+  "name": "marssmith-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "netlify-cli": "^26.2.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1"
@@ -29,12 +30,12 @@
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mallorysmith64/personal-portfolio.git"
+    "url": "git+https://github.com/mallorysmith64/marssmith-portfolio.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mallorysmith64/personal-portfolio/issues"
+    "url": "https://github.com/mallorysmith64/marssmith-portfolio/issues"
   },
-  "homepage": "https://github.com/mallorysmith64/personal-portfolio#readme"
+  "homepage": "https://github.com/mallorysmith64/marssmith-portfolio#readme"
 }
