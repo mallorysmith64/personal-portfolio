@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 // Fill in your real URLs here later
 const LINKS = {
   home: "/",
-  blog: "#",
-  books: "#",
-  social: "#",
+  blog: "/blogs",
+  books: "/books",
+  social: "/socials",
 };
 
 export default function Navbar() {
@@ -15,26 +16,26 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        <a href={LINKS.home} className="navbar-home">
+        <Link to={LINKS.home} className="navbar-home">
           Home
-        </a>
+        </Link>
 
         {/* Desktop menu */}
         <ul className="navbar-menu navbar-menu-desktop">
           <li>
-            <a href={LINKS.blog} className="navbar-link">
-              Blog
-            </a>
+            <Link to={LINKS.blog} className="navbar-link">
+              Blogs
+            </Link>
           </li>
           <li>
-            <a href={LINKS.books} className="navbar-link">
+            <Link to={LINKS.books} className="navbar-link">
               Books
-            </a>
+            </Link>
           </li>
           <li>
-            <a href={LINKS.social} className="navbar-link">
-              Social
-            </a>
+            <Link to={LINKS.social} className="navbar-link">
+              Socials
+            </Link>
           </li>
         </ul>
 
@@ -54,34 +55,34 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="navbar-mobile-menu">
-          <a
-            href={LINKS.home}
+          <Link
+            to={LINKS.home}
             className="navbar-mobile-home"
             onClick={() => setMobileOpen(false)}
           >
             Home
-          </a>
-          <a
-            href={LINKS.blog}
+          </Link>
+          <Link
+            to={LINKS.blog}
             className="navbar-mobile-link"
             onClick={() => setMobileOpen(false)}
           >
-            Blog
-          </a>
-          <a
-            href={LINKS.books}
+            Blogs
+          </Link>
+          <Link
+            to={LINKS.books}
             className="navbar-mobile-link"
             onClick={() => setMobileOpen(false)}
           >
             Books
-          </a>
-          <a
-            href={LINKS.social}
+          </Link>
+          <Link
+            to={LINKS.social}
             className="navbar-mobile-link"
             onClick={() => setMobileOpen(false)}
           >
-            Social
-          </a>
+            Socials
+          </Link>
         </div>
       )}
     </nav>
