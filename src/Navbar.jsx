@@ -5,26 +5,26 @@ import "./index.css";
 const LINKS = {
   home: "/",
   blogs: [
-    { label: "Form Builder Blog", href: "https://your-form-builder-blog.example.com" },
-    { label: "Book Review Blog", href: "https://your-book-review-blog.example.com" },
+    { label: "Form Builder Blog", href: "http://formgenerator.pro/" },
+    { label: "Book Review Blog", href: "https://marssmithbookreviews.wordpress.com/" },
   ],
-  books: [
-    { label: "Ebook (Kindle/KDP)", href: "https://www.amazon.com/dp/your-asin" },
-    { label: "Physical Book", href: null, comingSoon: true },
-  ],
+  // books: [
+  //   { label: "Ebook (Kindle/KDP)", href: "https://www.amazon.com/dp/your-asin" },
+  //   { label: "Physical Book", href: null, comingSoon: true },
+  // ],
   social: [
-    { label: "YouTube", href: "https://youtube.com/@yourchannel" },
-    { label: "GitHub", href: "https://github.com/yourusername" },
-    { label: "Twitter / X", href: "https://twitter.com/yourhandle" },
+    { label: "YouTube", href: "https://www.youtube.com/@codermars" },
+    { label: "GitHub", href: "https://github.com/mallorysmith64" },
+    { label: "Twitter / X", href: "https://x.com/codermars42" },
   ],
   misc: [
-    { label: "Science Slack", href: "https://join.slack.com/your-invite-link" },
+    { label: "Science Slack", href: "https://science42.slack.com" },
   ],
 };
 
 const GROUPS = [
   { key: "blogs", label: "Blogs", align: "left" },
-  { key: "books", label: "Books", align: "left" },
+  // { key: "books", label: "Books", align: "left" },
   { key: "social", label: "Social", align: "left" },
   { key: "misc", label: "Misc", align: "right" },
 ];

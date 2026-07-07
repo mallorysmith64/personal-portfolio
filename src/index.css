@@ -31,6 +31,12 @@ html, body {
   width: 100%;
 }
 
+.home {
+  display:flex;
+  justify-content:center;
+  padding:12em;
+}
+
 .navbar {
   position: relative;
   background-color: var(--color-navbar-bg);
