@@ -37,6 +37,135 @@ html, body {
   padding:12em;
 }
 
+/* ============================================
+   PAGE CONTENT — Socials / Blogs / Books
+   ============================================ */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-navbar-text);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.page-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-badge-text);
+  margin: 0 0 2.25rem;
+}
+
+/* --- Socials: icon-style pill buttons --- */
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--color-navbar-text);
+  background-color: var(--color-navbar-bg);
+  border: 1px solid var(--color-navbar-border);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.social-pill:hover {
+  background-color: var(--color-navbar-hover);
+  border-color: #c9c9c9;
+}
+
+.social-pill:active {
+  transform: translateY(1px);
+}
+
+.social-pill:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* --- Blogs: cards with title + description --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.blog-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-navbar-bg);
+  border: 1px solid var(--color-navbar-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.blog-card:hover {
+  border-color: #c9c9c9;
+  box-shadow: 0 6px 20px var(--color-dropdown-shadow);
+  transform: translateY(-1px);
+}
+
+.blog-card:focus-visible {
+  outline: 2px solid var(--color-focus-outline);
+  outline-offset: 2px;
+}
+
+.blog-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.blog-card-desc {
+  font-size: 0.9rem;
+  color: var(--color-badge-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.blog-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navbar-text);
+}
+
+.blog-card-cta::after {
+  content: " \2192";
+}
+
+/* --- Books: simple placeholder --- */
+.books-placeholder {
+  border: 1px dashed var(--color-navbar-border);
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--color-disabled-text);
+  font-size: 0.95rem;
+}
+
+
 .navbar {
   position: relative;
   background-color: var(--color-navbar-bg);
