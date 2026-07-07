@@ -1,73 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import "./index.css";
 
-// Fill in your real URLs here
+// Fill in your real URLs here later
 const LINKS = {
   home: "/",
-  blogs: [
-    { label: "Form Builder Blog", href: "http://formgenerator.pro/" },
-    { label: "Book Review Blog", href: "https://marssmithbookreviews.wordpress.com/" },
-  ],
-  // books: [
-  //   { label: "Ebook (Kindle/KDP)", href: "https://www.amazon.com/dp/your-asin" },
-  //   { label: "Physical Book", href: null, comingSoon: true },
-  // ],
-  social: [
-    { label: "YouTube", href: "https://www.youtube.com/@codermars" },
-    { label: "GitHub", href: "https://github.com/mallorysmith64" },
-    { label: "Twitter / X", href: "https://x.com/codermars42" },
-  ],
-  misc: [
-    { label: "Science Slack", href: "https://science42.slack.com" },
-  ],
+  blog: "#",
+  books: "#",
+  social: "#",
 };
 
-const GROUPS = [
-  { key: "blogs", label: "Blogs", align: "left" },
-  // { key: "books", label: "Books", align: "left" },
-  { key: "social", label: "Social", align: "left" },
-  { key: "misc", label: "Misc", align: "right" },
-];
-
 export default function Navbar() {
-  const [openGroup, setOpenGroup] = useState(null); // desktop dropdown currently open
-  const [mobileOpen, setMobileOpen] = useState(false); // mobile menu open/closed
-  const [mobileExpanded, setMobileExpanded] = useState(null); // which accordion section is open on mobile
-  const navRef = useRef(null);
-
-  // Close dropdown on click outside
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (navRef.current && !navRef.current.contains(e.target)) {
-        setOpenGroup(null);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  // Close dropdown on Escape
-  useEffect(() => {
-    function handleEscape(e) {
-      if (e.key === "Escape") {
-        setOpenGroup(null);
-        setMobileOpen(false);
-      }
-    }
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
-  }, []);
-
-  function toggleGroup(key) {
-    setOpenGroup((prev) => (prev === key ? null : key));
-  }
-
-  function toggleMobileGroup(key) {
-    setMobileExpanded((prev) => (prev === key ? null : key));
-  }
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="navbar" ref={navRef}>
+    <nav className="navbar">
       <div className="navbar-inner">
         <a href={LINKS.home} className="navbar-home">
           Home
@@ -75,56 +21,21 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <ul className="navbar-menu navbar-menu-desktop">
-          {GROUPS.map((group) => (
-            <li key={group.key} className="navbar-item">
-              <button
-                className="navbar-dropdown-trigger"
-                aria-expanded={openGroup === group.key}
-                aria-haspopup="true"
-                onClick={() => toggleGroup(group.key)}
-              >
-                {group.label}
-                <span
-                  className={
-                    "navbar-caret" +
-                    (openGroup === group.key ? " navbar-caret-open" : "")
-                  }
-                  aria-hidden="true"
-                >
-                  ▾
-                </span>
-              </button>
-
-              {openGroup === group.key && (
-                <ul
-                  className={
-                    "navbar-dropdown" +
-                    (group.align === "right" ? " navbar-dropdown-right" : "")
-                  }
-                >
-                  {LINKS[group.key].map((item) => (
-                    <li key={item.label}>
-                      {item.comingSoon ? (
-                        <span className="navbar-dropdown-link navbar-disabled">
-                          {item.label}
-                          <span className="navbar-badge">Coming soon</span>
-                        </span>
-                      ) : (
-                        <a
-                          href={item.href}
-                          className="navbar-dropdown-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {item.label}
-                        </a>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
+          <li>
+            <a href={LINKS.blog} className="navbar-link">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href={LINKS.books} className="navbar-link">
+              Books
+            </a>
+          </li>
+          <li>
+            <a href={LINKS.social} className="navbar-link">
+              Social
+            </a>
+          </li>
         </ul>
 
         {/* Mobile hamburger */}
@@ -140,7 +51,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu (accordion) */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="navbar-mobile-menu">
           <a
@@ -150,50 +61,27 @@ export default function Navbar() {
           >
             Home
           </a>
-          {GROUPS.map((group) => (
-            <div key={group.key} className="navbar-mobile-group">
-              <button
-                className="navbar-mobile-trigger"
-                aria-expanded={mobileExpanded === group.key}
-                onClick={() => toggleMobileGroup(group.key)}
-              >
-                {group.label}
-                <span
-                  className={
-                    "navbar-caret" +
-                    (mobileExpanded === group.key ? " navbar-caret-open" : "")
-                  }
-                  aria-hidden="true"
-                >
-                  ▾
-                </span>
-              </button>
-              {mobileExpanded === group.key && (
-                <ul className="navbar-mobile-dropdown">
-                  {LINKS[group.key].map((item) => (
-                    <li key={item.label}>
-                      {item.comingSoon ? (
-                        <span className="navbar-dropdown-link navbar-disabled">
-                          {item.label}
-                          <span className="navbar-badge">Coming soon</span>
-                        </span>
-                      ) : (
-                        <a
-                          href={item.href}
-                          className="navbar-dropdown-link"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {item.label}
-                        </a>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
+          <a
+            href={LINKS.blog}
+            className="navbar-mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Blog
+          </a>
+          <a
+            href={LINKS.books}
+            className="navbar-mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Books
+          </a>
+          <a
+            href={LINKS.social}
+            className="navbar-mobile-link"
+            onClick={() => setMobileOpen(false)}
+          >
+            Social
+          </a>
         </div>
       )}
     </nav>
