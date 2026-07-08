@@ -2,7 +2,7 @@ const PROJECT_LINKS = [
   {
     title: "Software Development Portfolio",
     description: "A collection of my software development projects and experiences",
-    href: "https://bit.ly/mallorysmith-software",
+    href: "https://mallorysmith-software.netlify.app/",
   },
 ];
 
